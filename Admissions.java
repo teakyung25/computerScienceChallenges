@@ -1,34 +1,27 @@
+import java.util.*;
+
+
 public class Admissions {
     public static void main (String [] args ){
-        String [] student1 = status(1500,90,8,"Mars", "Padjen");
+        String [] student1 = status(1500,95,8,"Mars", "Padjen");
         int solidCount = 0;
         int nopeCount = 0;
-        if(student1[0] == "Elite" || student1[1] == "Elite" || student1[2] == "Elite" || student1[3] == "Elite"){
-            int i = 0;
-            while(i < student1.length) {
-                if(student1[i] == "Solid") {
-                    solidCount++;
-                }
-                if(student1[i] == "Nope"){
-                    nopeCount++;
-                }
-                i++;
+        int i = 0;
+        while(i < student1.length) {
+            if(student1[i] == "Solid") {
+                solidCount++;
             }
-            if(solidCount >= 2) {
-                if(student1[4] == "Padjen") {
-                    if(nopeCount == 0){
+            if(student1[i] == "Nope"){
+                nopeCount++;
+            }
+            i++;
+        }
+        if(((student1[0] == "Elite" || student1[1] == "Elite" || student1[2] == "Elite" || student1[3] == "Elite") || (solidCount >= 2) || (student1[4] == "Padjen")) && (nopeCount  == 0)){
+            
                         System.out.println("You have been accepted! You got two or more solids, at least one elite, from Colorado or no Florida, and your name was Padjen");
-                    } else {
-                        System.out.println("You have not been excepted! sorry, you have too many nopes :(");
-                    }
-                } else {
-                    System.out.println("You have not been excepted! sorry, your name isn't Padjen:(");
-                }
-            } else {
-                System.out.println("You have not been excepted! sorry, you don't have enough solids :(");
-            }
         } else {
-            System.out.println("You have not been excepted! sorry, you don't have a Elite :(");
+            System.out.println("You have not been excepted! sorry, you don't have a Elite, two solids, or your name wasn't padjen and you had more than 0 nopes :(");
+            System.out.println(Arrays.toString(student1));
         }
     }
 
