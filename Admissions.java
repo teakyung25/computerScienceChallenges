@@ -1,11 +1,8 @@
-import java.util.*;
-
 public class Admissions {
     public static void main (String [] args ){
         String [] student1 = status(1500,90,8,"Mars", "Padjen");
         int solidCount = 0;
         int nopeCount = 0;
-        System.out.println(Arrays.toString(student1));
         if(student1[0] == "Elite" || student1[1] == "Elite" || student1[2] == "Elite" || student1[3] == "Elite"){
             int i = 0;
             while(i < student1.length) {
@@ -20,18 +17,18 @@ public class Admissions {
             if(solidCount >= 2) {
                 if(student1[4] == "Padjen") {
                     if(nopeCount == 0){
-                        System.out.println("You have been accepted!");
+                        System.out.println("You have been accepted! You got two or more solids, at least one elite, from Colorado or no Florida, and your name was Padjen");
                     } else {
-                        System.out.println("You have not been excepted! sorry :(");
+                        System.out.println("You have not been excepted! sorry, you have too many nopes :(");
                     }
                 } else {
-                    System.out.println("You have not been excepted! sorry :(");
+                    System.out.println("You have not been excepted! sorry, your name isn't Padjen:(");
                 }
             } else {
-                System.out.println("You have not been excepted! sorry :(");
+                System.out.println("You have not been excepted! sorry, you don't have enough solids :(");
             }
         } else {
-            System.out.println("You have not been excepted! sorry :(");
+            System.out.println("You have not been excepted! sorry, you don't have a Elite :(");
         }
     }
 
@@ -48,11 +45,11 @@ public class Admissions {
             studentStatus[0] = "Nope";
         }
 
-        if(rank == 95){
+        if(rank >= 95){
             studentStatus[1] = "Elite";
-        } else if (rank == 90) {
+        } else if (rank >= 90) {
             studentStatus[1] = "Solid";
-        } else if (rank == 85) {
+        } else if (rank >= 85) {
             studentStatus[1] = "Acceptable";
         } else if (rank < 85) {
             studentStatus[1] = "Nope";
