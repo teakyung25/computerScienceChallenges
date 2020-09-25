@@ -1,17 +1,18 @@
-
+import java.util.*;
 
 public class Admissions {
     public static void main (String [] args ){
-        String [] student1 = status(1500,95,3,"Mars", "Padjen");
+        String [] student1 = status(1500,90,8,"Mars", "Padjen");
         int solidCount = 0;
         int nopeCount = 0;
+        System.out.println(Arrays.toString(student1));
         if(student1[0] == "Elite" || student1[1] == "Elite" || student1[2] == "Elite" || student1[3] == "Elite"){
             int i = 0;
             while(i < student1.length) {
                 if(student1[i] == "Solid") {
                     solidCount++;
                 }
-                if(student[i] == "Nope"){
+                if(student1[i] == "Nope"){
                     nopeCount++;
                 }
                 i++;
@@ -23,7 +24,9 @@ public class Admissions {
                     } else {
                         System.out.println("You have not been excepted! sorry :(");
                     }
-                } 
+                } else {
+                    System.out.println("You have not been excepted! sorry :(");
+                }
             } else {
                 System.out.println("You have not been excepted! sorry :(");
             }
